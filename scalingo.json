@@ -14,23 +14,23 @@
   "env": {
     "BOT_TOKEN": {
       "description": "Your bot Bot Token, get this value from @BotFather.",
-      "value": ""
+      "value": "5671251738:AAEbu6j7PXohij75EWQ4JKmRPxzE3DTwmf8"
     },
     "API_KEY": {
       "description": "Your APP API KEY, get this from https://my.telegram.org",
-      "value": ""
+      "value": "18164068"
     },
     "API_HASH": {
       "description": "Your APP HASH, get this from https://my.telegram.org",
-     "value": ""
+     "value": "48b5398b5c58a15d7dfcdff146dfb0a4"
     },
     "CHANNEL_URL": {
       "description": "URL of your Telegram channel link.",
-      "value": ""
+      "value": "http://t.me/ZonabanselBot"
     },
     "BOT_URL": {
       "description": "Username of your Telegram Bot (without @). Example: JayBeeTikTokBot",
-      "value": ""
+      "value": "ZonabanselBot"
     },
     "WORKERS": {
       "description": "Number of threads to use, this depends on usage.  4 is the recommended (and default) amount, but your experience may vary.",
