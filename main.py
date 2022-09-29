@@ -3,13 +3,13 @@
 # Encoding = 'utf-8'
 # Fork and Deploy, do not modify this repo and claim it yours
 # For collaboration mail me at dev.jaybee@gmail.com
+import os
 import asyncio
-from pyrogram import Client, filters
+from Pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InlineQueryResultArticle, InputTextMessageContent
 import shutil
 import requests
 import json
-import os
 import re
 from bs4 import BeautifulSoup as bs
 import time
