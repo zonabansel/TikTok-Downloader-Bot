@@ -4,3 +4,5 @@ tgcrypto
 pymongo[srv]
 python-dotenv
 bs4
+pyaes==1.6.1
+pysocks==1.7.1
