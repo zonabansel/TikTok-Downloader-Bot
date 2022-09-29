@@ -31,7 +31,7 @@ app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash,workers=wo
 
 
 
-@app.on_message(filters.command('start'))
+app.on_message(filters.command('start'))
 def start(client, message):
     kb = [[InlineKeyboardButton('Channel 🛡', url=chnnl),InlineKeyboardButton('Repo 🔰', url="https://github.com/TerminalWarlord/TikTok-Downloader-Bot/")]]
     reply_markup = InlineKeyboardMarkup(kb)
@@ -45,7 +45,7 @@ def start(client, message):
 
 
 
-@app.on_message(filters.command('help'))
+app.on_message(filters.command('help'))
 def help(client, message):
     kb = [[InlineKeyboardButton('Channel 🛡', url=chnnl),InlineKeyboardButton('Repo 🔰', url="https://github.com/TerminalWarlord/TikTok-Downloader-Bot/")]]
     reply_markup = InlineKeyboardMarkup(kb)
@@ -55,7 +55,7 @@ def help(client, message):
                      reply_markup=reply_markup)
 
 
-@app.on_message((filters.regex("http://")|filters.regex("https://")) & (filters.regex('tiktok')|filters.regex('douyin')))
+app.on_message((filters.regex("http://")|filters.regex("https://")) & (filters.regex('tiktok')|filters.regex('douyin')))
 def tiktok_dl(client, message):
     a = app.send_message(chat_id=message.chat.id,
                          text='__Downloading File to the Server__',
