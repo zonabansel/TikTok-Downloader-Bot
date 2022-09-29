@@ -1,6 +1,6 @@
 import os
 import asyncio
-from pyrogram import Client, filters
+from pyrogram import Client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InlineQueryResultArticle, InputTextMessageContent
 import shutil
 import requests
@@ -13,7 +13,6 @@ import math
 import base64
 from progress_bar import progress, TimeFormatter, humanbytes
 from dotenv import load_dotenv
-import pyrogram
 load_dotenv()
 bot_token = os.environ.get('BOT_TOKEN')
 workers = int(os.environ.get('WORKERS'))
