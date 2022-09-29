@@ -5,34 +5,31 @@
 # For collaboration mail me at dev.jaybee@gmail.com
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InlineQueryResultArticle, InputTextMessageContent
+import shutil
+import requests
 import json
 import os
 import re
-import shutil
-import requests
+from bs4 import BeautifulSoup as bs
 import time
+from datetime import timedelta
 import math
 import base64
-from bs4 import BeautifulSoup as bs
-from datetime import timedelta
 from progress_bar import progress, TimeFormatter, humanbytes
 from dotenv import load_dotenv
-from os.path import join, dirname
 
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
-
-#$bot_token = os.environ.get('5682035086:AAF3z0NugTdYKwLdylygAY2rzX1gctNRP0M')
-#workers = int(os.environ.get('4'))
-#api = int(os.environ.get('18164068'))
-#hash = os.environ.get('48b5398b5c58a15d7dfcdff146dfb0a4')
-#chnnl = os.environ.get('http://t.me/ZonamusikBot')
-#BOT_URL = os.environ.get('ZonamusikBot')
-app = Client("JayBee",bot_token=bot_token, api_id=api,api_hash=hash,workers=workers)
+load_dotenv()
+bot_token = os.environ.get('BOT_TOKEN')
+workers = int(os.environ.get('WORKERS'))
+api = int(os.environ.get('API_KEY'))
+hash = os.environ.get('API_HASH')
+chnnl = os.environ.get('CHANNEL_URL')
+BOT_URL = os.environ.get('BOT_URL')
+app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash, workers=workers)
 
 
 
-app.on_message(filters.command('start'))
+@app.on_message(filters.command('start'))
 def start(client, message):
     kb = [[InlineKeyboardButton('Channel 🛡', url=chnnl),InlineKeyboardButton('Repo 🔰', url="https://github.com/TerminalWarlord/TikTok-Downloader-Bot/")]]
     reply_markup = InlineKeyboardMarkup(kb)
@@ -46,7 +43,7 @@ def start(client, message):
 
 
 
-app.on_message(filters.command('help'))
+@app.on_message(filters.command('help'))
 def help(client, message):
     kb = [[InlineKeyboardButton('Channel 🛡', url=chnnl),InlineKeyboardButton('Repo 🔰', url="https://github.com/TerminalWarlord/TikTok-Downloader-Bot/")]]
     reply_markup = InlineKeyboardMarkup(kb)
@@ -56,7 +53,7 @@ def help(client, message):
                      reply_markup=reply_markup)
 
 
-app.on_message((filters.regex("http://")|filters.regex("https://")) & (filters.regex('tiktok')|filters.regex('douyin')))
+@app.on_message((filters.regex("http://")|filters.regex("https://")) & (filters.regex('tiktok')|filters.regex('douyin')))
 def tiktok_dl(client, message):
     a = app.send_message(chat_id=message.chat.id,
                          text='__Downloading File to the Server__',
@@ -72,13 +69,13 @@ def tiktok_dl(client, message):
     }
     headers = {
       'x-rapidapi-host': "tiktok-info.p.rapidapi.com",
-      'x-rapidapi-key': "c59c66410fmsh263f32a9d4db607p19ba5bjsn262a73ef5974'"
+      'x-rapidapi-key': "f9d65af755msh3c8cac23b52a5eep108a33jsnbf7de971bb72"
     }
     
     ### Get your Free TikTok API from https://rapidapi.com/TerminalWarlord/api/tiktok-info/
     #Using the default one can stop working any moment 
     
-    api = "https://tiktok-info.p.rapidapi.com/dl/"
+    api = f"https://tiktok-info.p.rapidapi.com/dl/"
     r = requests.get(api, params=params, headers=headers).json()['videoLinks']['download']
     directory = str(round(time.time()))
     filename = str(int(time.time()))+'.mp4'
