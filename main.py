@@ -20,12 +20,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 bot_token = os.environ.get('BOT_TOKEN')
-workers = int(os.environ.get('4'))
+#workers = int(os.environ.get('4'))
 api = int(os.environ.get('API_KEY'))
 hash = os.environ.get('API_HASH')
 chnnl = os.environ.get('CHANNEL_URL')
 BOT_URL = os.environ.get('BOT_URL')
-app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash, workers=workers)
+app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash)
 
 
 
