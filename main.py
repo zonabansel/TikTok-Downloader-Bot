@@ -17,8 +17,10 @@ import math
 import base64
 from progress_bar import progress, TimeFormatter, humanbytes
 from dotenv import load_dotenv
+from os.path import join, dirname
+dotenv_path = join(dirname(__file__), '.env')
 
-load_dotenv()
+load_dotenv(dotenv_path)
 bot_token = os.environ.get('5682035086:AAF3z0NugTdYKwLdylygAY2rzX1gctNRP0M')
 workers = int(os.environ.get('4'))
 api = int(os.environ.get('18164068'))
