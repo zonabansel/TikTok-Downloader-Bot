@@ -22,7 +22,7 @@ dotenv_path = join(dirname(__file__), '.env')
 
 load_dotenv(dotenv_path)
 
-$bot_token = os.environ.get('5682035086:AAF3z0NugTdYKwLdylygAY2rzX1gctNRP0M')
+#$bot_token = os.environ.get('5682035086:AAF3z0NugTdYKwLdylygAY2rzX1gctNRP0M')
 #workers = int(os.environ.get('4'))
 #api = int(os.environ.get('18164068'))
 #hash = os.environ.get('48b5398b5c58a15d7dfcdff146dfb0a4')
