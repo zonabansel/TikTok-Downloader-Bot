@@ -19,13 +19,13 @@ from progress_bar import progress, TimeFormatter, humanbytes
 from dotenv import load_dotenv
 
 load_dotenv()
-bot_token = os.environ.get('BOT_TOKEN')
-#workers = int(os.environ.get('4'))
-api = int(os.environ.get('API_KEY'))
-hash = os.environ.get('API_HASH')
-chnnl = os.environ.get('CHANNEL_URL')
-BOT_URL = os.environ.get('BOT_URL')
-app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash)
+bot_token = os.environ.get('5682035086:AAF3z0NugTdYKwLdylygAY2rzX1gctNRP0M')
+workers = int(os.environ.get('4'))
+api = int(os.environ.get('18164068'))
+hash = os.environ.get('48b5398b5c58a15d7dfcdff146dfb0a4')
+chnnl = os.environ.get('http://t.me/ZonamusikBot')
+BOT_URL = os.environ.get('ZonamusikBot')
+app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash,workers=workers)
 
 
 
