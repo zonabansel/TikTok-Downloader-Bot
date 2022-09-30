@@ -1,9 +1,9 @@
-requests
+requests==2.28.1
 tgcrypto
-python-dotenv
+python-dotenv==0.21.0
 bs4
-pyaes
-PySocks
-Pyrogram
+pyaes==1.6.1
+PySocks==1.7.1
+Pyrogram==2.0.57
 Django
-wheels
+wheel
