@@ -130,4 +130,4 @@ def tiktok_dl(client, message):
             pass
 
 
-app.run(0.0.0.0,$PORT)
+app.run(host='0.0.0.0')
