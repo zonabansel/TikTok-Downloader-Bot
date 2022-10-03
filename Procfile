@@ -1,2 +1,2 @@
-web: python3 main.py
-worker: python3 main.py -worker
+web: python3 main.py -p 443
+worker: python3 main.py -p 443
