@@ -25,6 +25,8 @@ api = int(os.environ.get('API_KEY'))
 hash = os.environ.get('API_HASH')
 chnnl = os.environ.get('CHANNEL_URL')
 BOT_URL = os.environ.get('BOT_URL')
+_HOST = '0.0.0.0'
+_PORT = 5000
 app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash, workers=workers)
 
 
@@ -128,4 +130,4 @@ def tiktok_dl(client, message):
             pass
 
 
-app.run()
+app.run(_HOST,_PORT)
